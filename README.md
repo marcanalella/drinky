@@ -12,10 +12,3 @@ Browse cocktail recipes by categories or by using the advanced search function. 
 
 ## ★ AND FINALLY: SIT, DRINK AND ENJOY
 Now that you've created a Negroni, Singapore Sling, Pina Colada, Bloody Mary, Zombie, Moscow Mule, B52, Daiquiri, Mint Julep, White Lady, Sex on the Beach, Vesper, Manhattan, Lemon Drop, Mai Tai, Cuba Libre, Sea Breeze, Long Island Ice Tea, Cosmopolitan, Margarita, Tequila Sunrise or any other cocktail - drink and enjoy. And always remember to drink responsibly.
-
-## ★ CONTACT US
-We love to hear from you, we are constantly expanding our services. If you have any suggestions, please send an email to vem.app.dev@gmail.com
-
-# Technical documentation
-
-## TODO
