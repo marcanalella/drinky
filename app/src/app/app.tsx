@@ -44,7 +44,7 @@ export default function App() {
     if (!isAuthenticated) {
         return (
             <div>
-                <Demo />
+                <SignIn />
             </div>
         );
     }
