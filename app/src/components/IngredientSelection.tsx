@@ -78,7 +78,7 @@ export const IngredientSelection: React.FC<IngredientSelectionProps> = ({ onSear
                     className="w-full flex items-center justify-center space-x-2 bg-sky-400 text-white py-3 rounded"
                 >
                     <FaSearch />
-                    <span>Cerca Drinks</span>
+                    <span>Find Drinks</span>
                 </button>
             </div>
         </div>

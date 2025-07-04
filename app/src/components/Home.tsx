@@ -1,7 +1,10 @@
 // src/components/DrinkyPage.jsx
 
 import React from "react";
-import {FaGlassCheers, FaSearch, FaList} from "react-icons/fa";
+import {FaGlassCheers, FaSearch, FaList, FaImage} from "react-icons/fa";
+import {SignInButton, useProfile} from "@farcaster/auth-kit";
+import "@farcaster/auth-kit/styles.css";
+
 
 interface HomeProps {
     onShowDrinkList: () => void;
@@ -10,7 +13,11 @@ interface HomeProps {
 }
 
 const Home: React.FC<HomeProps> = ({onShowDrinkList, onSearchByIngredients, onSendDrinkToFriend}) => {
+
+    const isAuthenticated = useProfile().isAuthenticated;
+
     return (
+
         <div className="min-h-screen flex flex-col items-center justify-center space-y-6 px-4">
             <div className="text-center space-y-2">
                 <h1 className="text-3xl font-bold">Hi, I'm Drinky!</h1>
@@ -25,26 +32,40 @@ const Home: React.FC<HomeProps> = ({onShowDrinkList, onSearchByIngredients, onSe
                 />
             </div>
 
+            <div>
+                <SignInButton/>
+            </div>
+
             <div className="w-full max-w-md flex flex-col space-y-4 mt-4">
-                <button
+
+                {isAuthenticated && (<button
                     onClick={onSearchByIngredients}
                     className="flex items-center justify-between bg-white rounded-full shadow px-4 py-3 text-left hover:bg-gray-100">
                     <span>Search for a drink by ingredients</span>
                     <FaSearch className="text-gray-600"/>
-                </button>
+                </button>)}
 
-                <button onClick={onShowDrinkList}
+                {isAuthenticated && (
+                    <button onClick={onShowDrinkList}
+                            className="flex items-center justify-between bg-white rounded-full shadow px-4 py-3 text-left hover:bg-gray-100">
+                        <span>Drink list</span>
+                        <FaList className="text-gray-600"/>
+                    </button>)}
+
+                {isAuthenticated && (
+                    <button
+                        onClick={onSendDrinkToFriend}
                         className="flex items-center justify-between bg-white rounded-full shadow px-4 py-3 text-left hover:bg-gray-100">
-                    <span>Drink list</span>
-                    <FaList className="text-gray-600"/>
-                </button>
+                        <span>Buy a drink to a friend :)</span>
+                        <FaGlassCheers className="text-gray-600"/>
+                    </button>)}
 
-                <button
-                    onClick={onSendDrinkToFriend}
-                    className="flex items-center justify-between bg-white rounded-full shadow px-4 py-3 text-left hover:bg-gray-100">
-                    <span>Buy a drink to a friend :)</span>
-                    <FaGlassCheers className="text-gray-600"/>
-                </button>
+                {isAuthenticated && (
+                    <button
+                        className="flex items-center justify-between bg-white rounded-full shadow px-4 py-3 text-left hover:bg-gray-100">
+                        <span>LIMITED! Mint Drinky NFT :)</span>
+                        <FaImage className="text-gray-600"/>
+                    </button>)}
             </div>
         </div>
     );

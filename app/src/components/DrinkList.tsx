@@ -51,7 +51,7 @@ const DrinkList: React.FC<DrinkListProps> = ({
 
     return (
         <div className="flex flex-col min-h-screen">
-            {/* Top bar */}
+
             <div className="bg-sky-400 p-4 flex items-center justify-between">
                 <button onClick={onBack} className="text-white">
                     <FaArrowLeft size={20}/>
@@ -64,7 +64,6 @@ const DrinkList: React.FC<DrinkListProps> = ({
                 <div className="w-5"/>
             </div>
 
-            {/* Search bar */}
             <div className="p-4 bg-sky-400">
                 <div className="flex items-center bg-white rounded-full px-3 py-2">
                     <FaSearch className="text-gray-500 mr-2"/>
@@ -78,7 +77,6 @@ const DrinkList: React.FC<DrinkListProps> = ({
                 </div>
             </div>
 
-            {/* Drink grid */}
             <div className="grid grid-cols-2 gap-4 p-4">
                 {filteredDrinks.map((drink) => (
                     <div
