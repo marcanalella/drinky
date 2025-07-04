@@ -68,7 +68,10 @@ export default function App() {
 
                 {view === "list" && (
                     <DrinkList
-                        onBack={() => setView("home")}
+                        onBack={() => {
+                            setView("home");
+                            setSelectedIngredients(null);
+                        }}
                         onSelect={(drink) => {
                             setSelectedDrink(drink);
                             setView("details");
