@@ -15,7 +15,7 @@ interface HomeProps {
 
 const Home: React.FC<HomeProps> = ({onShowDrinkList, onSearchByIngredients, onMintNft}) => {
 
-    const { isAuthenticated } = useProfile();
+    const {isAuthenticated} = useProfile();
 
     return (
 
@@ -35,7 +35,7 @@ const Home: React.FC<HomeProps> = ({onShowDrinkList, onSearchByIngredients, onMi
 
             {!isAuthenticated && (
                 <div>
-                    <SignInButton />
+                    <SignInButton/>
                 </div>
             )}
 
