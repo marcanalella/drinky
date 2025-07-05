@@ -33,9 +33,11 @@ const Home: React.FC<HomeProps> = ({onShowDrinkList, onSearchByIngredients, onMi
                 />
             </div>
 
-            <div>
-                <SignInButton/>
-            </div>
+            {!isAuthenticated && (
+                <div>
+                    <SignInButton />
+                </div>
+            )}
 
             <div className="w-full max-w-md flex flex-col space-y-4 mt-4">
 
