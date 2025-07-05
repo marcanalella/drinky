@@ -1,7 +1,7 @@
 // src/components/DrinkyPage.jsx
 
 import React from "react";
-import {FaGlassCheers, FaSearch, FaList, FaImage} from "react-icons/fa";
+import {FaSearch, FaList, FaImage} from "react-icons/fa";
 import {SignInButton, useProfile} from "@farcaster/auth-kit";
 import "@farcaster/auth-kit/styles.css";
 
@@ -9,12 +9,13 @@ import "@farcaster/auth-kit/styles.css";
 interface HomeProps {
     onShowDrinkList: () => void;
     onSearchByIngredients: () => void;
-    onSendDrinkToFriend: () => void;
+    onMintNft: () => void;
 }
 
-const Home: React.FC<HomeProps> = ({onShowDrinkList, onSearchByIngredients, onSendDrinkToFriend}) => {
 
-    const isAuthenticated = useProfile().isAuthenticated;
+const Home: React.FC<HomeProps> = ({onShowDrinkList, onSearchByIngredients, onMintNft}) => {
+
+    const { isAuthenticated } = useProfile();
 
     return (
 
@@ -54,18 +55,13 @@ const Home: React.FC<HomeProps> = ({onShowDrinkList, onSearchByIngredients, onSe
 
                 {isAuthenticated && (
                     <button
-                        onClick={onSendDrinkToFriend}
-                        className="flex items-center justify-between bg-white rounded-full shadow px-4 py-3 text-left hover:bg-gray-100">
-                        <span>Buy a drink to a friend :)</span>
-                        <FaGlassCheers className="text-gray-600"/>
-                    </button>)}
-
-                {isAuthenticated && (
-                    <button
+                        onClick={onMintNft}
                         className="flex items-center justify-between bg-white rounded-full shadow px-4 py-3 text-left hover:bg-gray-100">
                         <span>LIMITED! Mint Drinky NFT :)</span>
                         <FaImage className="text-gray-600"/>
-                    </button>)}
+                    </button>
+                )}
+
             </div>
         </div>
     );

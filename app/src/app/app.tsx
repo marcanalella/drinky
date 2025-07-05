@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import React, {useState} from "react";
 import type {Drink} from "~/types/drink";
-import {AuthKitProvider, useProfile} from "@farcaster/auth-kit";
+import {AuthKitProvider} from "@farcaster/auth-kit";
 
 
 // Dynamic imports
@@ -12,10 +12,10 @@ const DrinkList = dynamic(() => import("~/components/DrinkList"), {ssr: false});
 const DrinkDetail = dynamic(() => import("~/components/DrinkDetails"), {ssr: false});
 const IngredientSelection = dynamic(() => import("~/components/IngredientSelection")
     .then((mod) => mod.IngredientSelection), {ssr: false});
-const SendDrink = dynamic(() => import("~/components/SendDrink"), {ssr: false});
+const MintNFT = dynamic(() => import("~/components/MintNft"), {ssr: false});
 
 export default function App() {
-    const [view, setView] = useState<"home" | "list" | "ingredients" | "details" | "send">("home");
+    const [view, setView] = useState<"home" | "list" | "ingredients" | "details" | "mint">("home");
     const [selectedDrink, setSelectedDrink] = useState<Drink | null>(null);
     const [selectedIngredients, setSelectedIngredients] = useState<number[] | null>(null);
     const [drinks, setDrinks] = useState<Drink[]>([]);
@@ -51,7 +51,7 @@ export default function App() {
                             loadDrinks();
                             setView("ingredients");
                         }}
-                        onSendDrinkToFriend={() => setView("send")}
+                        onMintNft={() => setView("mint")}
                     />
                 )}
 
@@ -87,9 +87,10 @@ export default function App() {
                     />
                 )}
 
-                {view === "send" && (
-                    <SendDrink onBack={() => setView("home")}/>
+                {view === "mint" && (
+                    <MintNFT onBack={() => setView("home")} />
                 )}
+
             </div>
         </AuthKitProvider>
     );
