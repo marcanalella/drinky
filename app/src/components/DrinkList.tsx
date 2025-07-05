@@ -58,8 +58,8 @@ const DrinkList: React.FC<DrinkListProps> = ({
                 </button>
                 <h2 className="text-white text-lg font-semibold">
                     {selectedIngredients && selectedIngredients.length > 0
-                        ? "Drinks filtrati"
-                        : "Lista Drinks"}
+                        ? "Filtered drinks"
+                        : "Drinks"}
                 </h2>
                 <div className="w-5"/>
             </div>

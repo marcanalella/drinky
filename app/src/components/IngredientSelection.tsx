@@ -38,7 +38,7 @@ export const IngredientSelection: React.FC<IngredientSelectionProps> = ({ onSear
                 <button onClick={onBack} className="text-white mr-2">
                     <FaArrowLeft size={20} />
                 </button>
-                <h2 className="text-white text-lg font-semibold">Scegli Ingredienti</h2>
+                <h2 className="text-white text-lg font-semibold">Select some ingredients</h2>
             </div>
 
             <div className="p-4 grid grid-cols-2 gap-4">
