@@ -27,7 +27,7 @@ const Home: React.FC<HomeProps> = ({onShowDrinkList, onSearchByIngredients, onMi
 
             <div className="w-48">
                 <img
-                    src="/animated_logo.gif"
+                    src="/logo.png"
                     alt="Drinky"
                     className="w-full h-auto"
                 />
