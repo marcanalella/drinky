@@ -623,8 +623,7 @@ export default function MintNFT({onBack}: { onBack: () => void }) {
             setError(null);
 
             //const provider = new ethers.JsonRpcProvider("https://virtual.sepolia.rpc.tenderly.co/082092dd-eca7-4b2c-868a-261948f1fedb");
-            const provider = new ethers.JsonRpcProvider("https://alfajores-forno.celo-testnet.org");
-            //const provider = new ethers.BrowserProvider(window.ethereum);
+            const provider = new ethers.BrowserProvider(window.ethereum);
             const signer = await provider.getSigner();
             const contract = new ethers.Contract(CONTRACT_ADDRESS, abi, signer);
 
