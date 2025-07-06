@@ -4,7 +4,7 @@ import React, {useState} from "react";
 import {ethers} from "ethers";
 import {FaSpinner} from "react-icons/fa";
 
-const CONTRACT_ADDRESS = "0x0655a4aCb9333bB8AF5fd6B37617D44E38c23298";
+const CONTRACT_ADDRESS = "0x9Fd14a6BC6E6F6F6E5704AB22fe919919ed77bD6";
 const abi = [
     {
         "inputs": [
