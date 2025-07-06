@@ -3,8 +3,6 @@
 import dynamic from "next/dynamic";
 import React, {useState} from "react";
 import type {Drink} from "~/types/drink";
-import {AuthKitProvider} from "@farcaster/auth-kit";
-
 
 // Dynamic imports
 const Home = dynamic(() => import("~/components/Home"), {ssr: false});
@@ -39,59 +37,57 @@ export default function App() {
     };
 
     return (
-        <AuthKitProvider config={config}>
-            <div>
-                {view === "home" && (
-                    <Home
-                        onShowDrinkList={() => {
-                            loadDrinks();
-                            setView("list");
-                        }}
-                        onSearchByIngredients={() => {
-                            loadDrinks();
-                            setView("ingredients");
-                        }}
-                        onMintNft={() => setView("mint")}
-                    />
-                )}
-
-                {view === "ingredients" && (
-                    <IngredientSelection
-                        onBack={() => setView("home")}
-                        onSearch={(codes) => {
-                            setSelectedIngredients(codes);
-                            setView("list");
-                        }}
-                    />
-                )}
-
-
-                {view === "list" && (
-                    <DrinkList
-                        onBack={() => {
-                            setView("home");
-                            setSelectedIngredients(null);
-                        }}
-                        onSelect={(drink) => {
-                            setSelectedDrink(drink);
-                            setView("details");
-                        }}
-                        selectedIngredients={selectedIngredients}
-                    />
-                )}
-
-                {view === "details" && selectedDrink && (
-                    <DrinkDetail drink={selectedDrink} onBack={() => {
-                        setView("list")
+        <div>
+            {view === "home" && (
+                <Home
+                    onShowDrinkList={() => {
+                        loadDrinks();
+                        setView("list");
                     }}
-                    />
-                )}
+                    onSearchByIngredients={() => {
+                        loadDrinks();
+                        setView("ingredients");
+                    }}
+                    onMintNft={() => setView("mint")}
+                />
+            )}
 
-                {view === "mint" && (
-                    <MintNFT onBack={() => setView("home")} />
-                )}
+            {view === "ingredients" && (
+                <IngredientSelection
+                    onBack={() => setView("home")}
+                    onSearch={(codes) => {
+                        setSelectedIngredients(codes);
+                        setView("list");
+                    }}
+                />
+            )}
 
-            </div>
-        </AuthKitProvider>
+
+            {view === "list" && (
+                <DrinkList
+                    onBack={() => {
+                        setView("home");
+                        setSelectedIngredients(null);
+                    }}
+                    onSelect={(drink) => {
+                        setSelectedDrink(drink);
+                        setView("details");
+                    }}
+                    selectedIngredients={selectedIngredients}
+                />
+            )}
+
+            {view === "details" && selectedDrink && (
+                <DrinkDetail drink={selectedDrink} onBack={() => {
+                    setView("list")
+                }}
+                />
+            )}
+
+            {view === "mint" && (
+                <MintNFT onBack={() => setView("home")}/>
+            )}
+
+        </div>
     );
 }
