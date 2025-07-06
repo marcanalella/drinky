@@ -113,9 +113,9 @@ export async function getFarcasterMetadata(): Promise<MiniAppManifest> {
     const encodedSignature = Buffer.from(signature, 'utf-8').toString('base64url');
 
     accountAssociation = {
-      header: encodedHeader,
-      payload: encodedPayload,
-      signature: encodedSignature
+      header: "eyJmaWQiOjExMDg1MTQsInR5cGUiOiJhdXRoIiwia2V5IjoiMHgyQmRDRkI0ZkNkM2QzYTVkMDRjNjdBOGEzZDZjNjIyNTA3YzUyNDU3In0", //encodedHeader,
+      payload: "eyJkb21haW4iOiJkcmlua3ktcm9zeS52ZXJjZWwuYXBwIn0", //encodedPayload,
+      signature: "4Ud5uE7gel0okXzM02TQfA9NhApr0dJ6DpFjvodfZ0VnN4B2NRMrsXqiiJ6LDuQqEpMzaDjhXOtBmfWDMX60hxs" //encodedSignature
     };
   }
 
