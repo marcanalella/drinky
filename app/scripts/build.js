@@ -165,9 +165,9 @@ async function generateFarcasterMetadata(domain, fid, accountAddress, seedPhrase
 
     return {
         accountAssociation: {
-            header: "eyJmaWQiOjExMDg1MTQsInR5cGUiOiJhdXRoIiwia2V5IjoiMHgyQmRDRkI0ZkNkM2QzYTVkMDRjNjdBOGEzZDZjNjIyNTA3YzUyNDU3In0", //encodedHeader,
+            header: "eyJmaWQiOjExMDg1MTQsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHgwOGNEM2VkM2FGZDA5NDRCZjdGZWY4MUY5RmEyRTY5MGJhN0IzMjUxIn0", //encodedHeader,
             payload: "eyJkb21haW4iOiJkcmlua3ktcm9zeS52ZXJjZWwuYXBwIn0", //encodedPayload,
-            signature: "4Ud5uE7gel0okXzM02TQfA9NhApr0dJ6DpFjvodfZ0VnN4B2NRMrsXqiiJ6LDuQqEpMzaDjhXOtBmfWDMX60hxs" //encodedSignature
+            signature: "MHhhMTFkOWVjMDk0ZDY3ZTVmZmM5NTQ0NGZjNjg0YjEyMmFkZmY3OGYyYjk3OTkyMTc5NWZjZDMxYTUwY2MwZjI2NGM5MDJjMDY4MTRjMDAwM2Q4OWFjZmFkZWFkZDZjNjI1OTQyODk5NTRlYjAzMjc1MDQxYWM1NzU3YzNlZGQzNjFj" //encodedSignature
         },
         frame: {
             version: "1",
