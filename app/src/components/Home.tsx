@@ -35,21 +35,21 @@ const Home: React.FC<HomeProps> = ({onShowDrinkList, onSearchByIngredients, onMi
 
                 <button
                     onClick={onSearchByIngredients}
-                    className="flex items-center justify-between bg-white rounded-full shadow px-4 py-3 text-left hover:bg-gray-100">
+                    className="flex items-center justify-between bg-white shadow text-gray-900 dark:bg-gray-800 dark:text-white rounded-full py-3 px-4 w-full">
                     <span>Search for a drink by ingredients</span>
                     <FaSearch className="text-gray-600"/>
                 </button>
 
 
                 <button onClick={onShowDrinkList}
-                        className="flex items-center justify-between bg-white rounded-full shadow px-4 py-3 text-left hover:bg-gray-100">
+                        className="flex items-center justify-between bg-white shadow text-gray-900 dark:bg-gray-800 dark:text-white rounded-full py-3 px-4 w-full">
                     <span>Drink list</span>
                     <FaList className="text-gray-600"/>
                 </button>
 
                 <button
                     onClick={onMintNft}
-                    className="flex items-center justify-between bg-white rounded-full shadow px-4 py-3 text-left hover:bg-gray-100">
+                    className="flex items-center justify-between bg-white shadow text-gray-900 dark:bg-gray-800 dark:text-white rounded-full py-3 px-4 w-full">
                     <span>LIMITED! Mint Drinky NFT :)</span>
                     <FaImage className="text-gray-600"/>
                 </button>
