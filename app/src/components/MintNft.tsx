@@ -658,7 +658,7 @@ export default function MintNFT({onBack}: { onBack: () => void }) {
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen px-4 py-8 text-center space-y-6">
-            <h2 className="text-2xl font-bold">Mint Your Drinky NFT</h2>
+            <h2 className="text-2xl font-bold">Mint Your Drinky NFT (now on Base Sepolia)</h2>
 
             <div className="w-48">
                 <img
