@@ -5,6 +5,7 @@ import {ethers} from "ethers";
 import {FaSpinner} from "react-icons/fa";
 
 const CONTRACT_ADDRESS = "0x9Fd14a6BC6E6F6F6E5704AB22fe919919ed77bD6";
+const CHAIN_ID = 84531;
 const abi = [
     {
         "inputs": [
@@ -622,9 +623,25 @@ export default function MintNFT({onBack}: { onBack: () => void }) {
             setLoading(true);
             setError(null);
 
+            //TENDERLY VIRTUAL TESTNET
             //const provider = new ethers.JsonRpcProvider("https://virtual.sepolia.rpc.tenderly.co/082092dd-eca7-4b2c-868a-261948f1fedb");
+
+            //BASE SEPOLIA CONNECTION
             const provider = new ethers.BrowserProvider(window.ethereum);
+            const network = await provider.getNetwork();
+            if (Number(network.chainId) !== CHAIN_ID) {
+                try {
+                    await window.ethereum.request({
+                        method: "wallet_switchEthereumChain",
+                        params: [{chainId: "0x14a34"}],
+                    });
+                } catch (switchError) {
+                    console.error(switchError);
+                }
+            }
+
             const signer = await provider.getSigner();
+
             const contract = new ethers.Contract(CONTRACT_ADDRESS, abi, signer);
 
             const tx = await contract.mint(metadataUri);
