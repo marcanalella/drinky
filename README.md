@@ -1,4 +1,4 @@
-# Drinky
+# Drinky - Now on Farcaster!
 
 # Project Overview
 
